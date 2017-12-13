@@ -36,7 +36,7 @@
                             <div id="put"></div>
                                 <div class="form-group">
                                     <label>Title</label>
-                                    <input class="form-control" name="title" id="title" placeholder="Enter Title" >
+                                    <input class="form-control" name="title" id="title" placeholder="Enter Title" required>
                                     <p class="help-block">Enter video title  here.</p>
                                 </div>
 
@@ -69,12 +69,12 @@
 
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <textarea class="form-control" rows="3" id="description" name="description" ></textarea>
+                                    <textarea class="form-control" rows="3" id="description" name="description" required></textarea>
                                 </div>
 
 								<div class="form-group">
 								    <label>Categories</label>
-								    <select class="form-control" name="categories" id="categories" >
+								    <select class="form-control" name="categories" id="categories" required>
 
 								        <option value="News">News</option>
 								        <option value="Politics">Politics</option>
