@@ -53,7 +53,7 @@
                                         </label>
 
                                         <label>
-                                            Link&nbsp;&nbsp;&nbsp;<input type="radio" name="type" id="type3" value="link" onchange="setCheckBox('link')">
+                                            Link&nbsp;&nbsp;&nbsp;<input type="radio" name="type" id="type3" value="link" onchange="setCheckBox('link')">(YouTube)
                                         </label>
                                     </div>
                                 </div>
@@ -182,7 +182,7 @@ function edituploaded (id)
 
         if(data.type=='link')
         $('#url').val(data.url);
-    
+
          setCheckBox(data.type);
 
         $('#description').val(data.description);
