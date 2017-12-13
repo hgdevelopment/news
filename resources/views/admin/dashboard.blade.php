@@ -36,7 +36,7 @@
                             <div id="put"></div>
                                 <div class="form-group">
                                     <label>Title</label>
-                                    <input class="form-control" name="title" id="title" placeholder="Enter Title" required>
+                                    <input class="form-control" name="title" id="title" placeholder="Enter Title" >
                                     <p class="help-block">Enter video title  here.</p>
                                 </div>
 
@@ -57,24 +57,24 @@
 
                                 <div class="form-group" id="url-div">
                                     <label>Video URL//:</label>
-                                    <input class="form-control" id="url" name="url"  placeholder="https://"  required>
+                                    <input class="form-control" id="url" name="url"  placeholder="https://"  >
                                 </div>
 
 
                                 <div class="form-group">
                                     <label>Pick File</label>
-                                    <input type="file" id="file" name="file" class="btn-outline btn-primary" required>
+                                    <input type="file" id="file" name="file" class="btn-outline btn-primary" >
                                 </div>
 
 
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <textarea class="form-control" rows="3" id="description" name="description" required></textarea>
+                                    <textarea class="form-control" rows="3" id="description" name="description" ></textarea>
                                 </div>
 
 								<div class="form-group">
 								    <label>Categories</label>
-								    <select class="form-control" name="categories" id="categories" required>
+								    <select class="form-control" name="categories" id="categories" >
 
 								        <option value="News">News</option>
 								        <option value="Politics">Politics</option>
