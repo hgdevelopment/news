@@ -35,17 +35,20 @@ class uploadController extends Controller
      */
     public function store(Request $request)
     {
-        
-
+       // return  $request->type;
+        if($request->type!='link')
+        {
         $file = strtolower(substr($request->title,0,5)).'heera'.time().'.'.$request->file->getClientOriginalExtension();
         $request->file->move(storage_path('post'), $file);
+        }
 
 
         $post= new post;
         $post->title= $request->title;
         $post->type= $request->type;
-        if($request->type=='video')
+        if($request->type=='link')
         $post->url= $request->url;
+        if($request->type!='link')
         $post->file= $file;
         $post->description= $request->description;
         $post->categories= $request->categories;
@@ -92,11 +95,11 @@ class uploadController extends Controller
         $file = strtolower(substr($request->title,0,5)).'heera'.time().'.'.$request->file->getClientOriginalExtension();
         $request->file->move(storage_path('post'), $file);
         }
-
+    
         $post=post::find($id);
         $post->title= $request->title;
         $post->type= $request->type;
-        if($request->type=='video')
+        if($request->type=='link')
         $post->url= $request->url;
         if(isset($request->file))
         $post->file= $file;

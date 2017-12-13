@@ -51,6 +51,10 @@
                                         <label>
                                             Post&nbsp;&nbsp;&nbsp;<input type="radio" name="type" id="type2" value="post" onchange="setCheckBox('post')">
                                         </label>
+
+                                        <label>
+                                            Link&nbsp;&nbsp;&nbsp;<input type="radio" name="type" id="type3" value="link" onchange="setCheckBox('link')">
+                                        </label>
                                     </div>
                                 </div>
 
@@ -61,7 +65,7 @@
                                 </div>
 
 
-                                <div class="form-group">
+                                <div class="form-group" id="file-div">
                                     <label>Pick File</label>
                                     <input type="file" id="file" name="file" class="btn-outline btn-primary" >
                                 </div>
@@ -122,13 +126,16 @@
 <script type="text/javascript">
 function setCheckBox(type)
 {
-    if(type=='post')
+    if(type=='post' || type=='video')
     {
         $('#url-div').hide();
+        $('#file-div').show();
     }
     else
     {
         $('#url-div').show();
+        $('#file-div').hide();
+
     }
 }
 
@@ -173,13 +180,10 @@ function edituploaded (id)
         $('input:radio[name=type]').filter('[value='+data.type+']').prop('checked', true);
 
 
-        if(data.type=='video')
-        {
-        setCheckBox('video');
+        if(data.type=='link')
         $('#url').val(data.url);
-        }
-        else
-         setCheckBox('post');
+    
+         setCheckBox(data.type);
 
         $('#description').val(data.description);
 
@@ -199,6 +203,7 @@ function edituploaded (id)
 var link=$('#link').val();
 $('#form').attr('action',link);
 $('#put').html('');
+setCheckBox('video')
 getUploadedContents();
 
 

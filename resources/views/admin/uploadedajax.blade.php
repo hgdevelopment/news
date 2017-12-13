@@ -26,6 +26,13 @@
 	
 	</video>    
 
+    @elseif($post->type=='link')
+	<iframe width="280" height="200"
+	src="https://www.youtube.com/embed/{{ $post->url }}">
+	</iframe>
+  
+
+
     @else
 
     	<img src="{{ URL::asset('storage/post/') }}/{{ $post->file }}" width="280" height="200">
