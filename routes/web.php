@@ -10,7 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'Auth\LoginController@showLoginForm');
+Route::post('login', ['as'=>'login','uses'=>'auth\LoginController@login']);
+Route::get('/logout', ['as'=>'logout','uses'=>'auth\LoginController@logout']);
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+
+Route::group(['middleware' => ['Admin']], function () 
+{
+
+    Route::get('admin/dashboard', ['as'=>'admin.dashboard','uses'=>'admin\pageController@index']);
+    Route::Resource('admin/upload', 'admin\uploadController');
+
 });
